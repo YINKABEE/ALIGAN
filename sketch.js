@@ -50,6 +50,7 @@ window.onresize = function() {
 
 function draw() {
   if (loading) {
+    background(0,0,0)
     text(wakeUpText,50,50)
     fill(256, 256, 256);
   }
