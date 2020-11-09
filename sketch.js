@@ -49,7 +49,7 @@ window.onresize = function() {
 
 function draw() {
   if (loading) {
-    text('Waking up model...',50,50)
+    text('Click to wake up model...',50,50)
     fill(256, 256, 256);
   }
 }
@@ -88,7 +88,6 @@ async function generateRainbow() {
   };
 
   //httpPost(path, 'json', data, gotImage, gotError);
-
   if (typeof(model) != "undefined") {
     const result = await model.query(inputs);
     loading = false;
