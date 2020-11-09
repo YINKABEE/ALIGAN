@@ -22,9 +22,12 @@ const model = new rw.HostedModel({
 let amt = 0.0;
 let angle = 0;
 
+function preload() {
+  song = loadSound('aliloop3.mp3');
+}
+
 function setup() {
   createCanvas(w, h);
-  song = loadSound('aliloop3.mp3');
   for (let i = 0; i < 1024; i++) {
     n[i] = new NoiseLoop(20, -1, 1);
   }
