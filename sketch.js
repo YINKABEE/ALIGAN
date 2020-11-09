@@ -54,7 +54,7 @@ function draw() {
   }
 }
 
-function mouseMoved() {
+function mouseClicked() {
   if (soundPlaying == true) {
     return false;
   } else {
