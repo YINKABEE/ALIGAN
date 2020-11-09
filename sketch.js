@@ -4,6 +4,7 @@ let url;
 let frame;
 let loading = true;
 let soundPlaying = false;
+let wakeUpText = "Click to wake up model..."
 let song;
 
 let w = window.innerWidth;
@@ -49,7 +50,7 @@ window.onresize = function() {
 
 function draw() {
   if (loading) {
-    text('Click to wake up model...',50,50)
+    text(wakeUpText,50,50)
     fill(256, 256, 256);
   }
 }
@@ -58,6 +59,7 @@ function mouseClicked() {
   if (soundPlaying == true) {
     return false;
   } else {
+    wakeUpText = "Waking up model, please wait..."
     soundPlaying = true;
     song.play();
   }
