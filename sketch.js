@@ -3,6 +3,8 @@ let rainbow;
 let url;
 let frame;
 let loading = true;
+let soundPlaying = false;
+let song;
 
 let w = window.innerWidth;
 let h = window.innerHeight
@@ -22,6 +24,7 @@ let angle = 0;
 
 function setup() {
   createCanvas(w, h);
+  song = loadSound('aliloop3.mp3');
   for (let i = 0; i < 1024; i++) {
     n[i] = new NoiseLoop(20, -1, 1);
   }
@@ -45,6 +48,15 @@ function draw() {
   if (loading) {
     text('Waking up model...',50,50)
     fill(256, 256, 256);
+  }
+}
+
+function mouseMoved() {
+  if (soundPlaying == true) {
+    return false;
+  } else {
+    soundPlaying = true;
+    song.play();
   }
 }
 
